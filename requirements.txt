@@ -1,0 +1,33 @@
+# Version floors (not exact pins) so pip pulls current releases with
+# Python 3.14 wheels. Re-pin to resolved versions with `pip freeze` once the
+# environment is working, if you need strict reproducibility.
+
+# --- PDF extraction & OCR ---
+PyMuPDF>=1.24
+pytesseract>=0.3.10
+Pillow>=10.0
+
+# --- Chunking ---
+langchain-text-splitters>=0.3
+tiktoken>=0.8
+
+# --- Embeddings + reranking ---
+# fastembed: ONNX int8 bge-small for fast CPU embedding (ingest + query).
+# sentence-transformers: still used for the cross-encoder reranker.
+fastembed>=0.4
+sentence-transformers>=3.2
+
+# --- Vector DB ---
+chromadb>=0.5
+
+# --- LLM (Gemini) ---
+# google-genai is the current SDK; google-generativeai is end-of-life.
+google-genai>=1.0
+
+# --- UI ---
+streamlit>=1.39
+
+# --- Utilities ---
+python-dotenv>=1.0
+langdetect>=1.0.9
+pandas>=2.2
